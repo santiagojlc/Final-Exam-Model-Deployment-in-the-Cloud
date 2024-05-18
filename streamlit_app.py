@@ -7,7 +7,7 @@ def load_model(filepath):
     model = tf.keras.models.load_model(filepath)
     return model
 
-st.title("TITLE")
+st.title("Daily Temperatures with Artificial Warming")
 
 model = load_model(r'C:\Users\HP\Desktop\STREAMLIT\my_arima_model.h5')
 
