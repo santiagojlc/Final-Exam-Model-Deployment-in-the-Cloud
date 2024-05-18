@@ -11,7 +11,7 @@ def load_model(filepath):
     return model
 
 # Load the model
-model = load_model('mymodel.pkl')
+model = load_model('Mymodel.pkl')
 
 # Function to generate temperature data using the model
 def generate_temperature_data(model, start_date, end_date):
