@@ -12,7 +12,7 @@ def load_data():
     })
     return temperature_data
 
-st.title("Daily Temperatures with Artificial Warming")
+st.title("Detroit Daily Temperatures with Artificial Warming")
 
 # Adding navigation and other sections
 st.sidebar.title("Navigation")
