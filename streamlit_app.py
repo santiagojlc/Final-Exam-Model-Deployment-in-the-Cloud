@@ -9,7 +9,7 @@ def load_model(filepath):
 
 st.title("Daily Temperatures with Artificial Warming")
 
-file_path = r'C:\Users\HP\Desktop\STREAMLIT\my_arima_model.h5'
+file_path = 'C:\Users\HP\Desktop\STREAMLIT\my_arima_model.h5'
 model = load_model(file_path)
 
 # Display information about the ARIMA model
