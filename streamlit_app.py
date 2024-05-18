@@ -1,33 +1,22 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import tensorflow as tf
 import matplotlib.pyplot as plt
 
-# Function to load the model
-@st.cache_resource
-def load_model(filepath):
-    model = tf.keras.models.load_model(filepath)
-    return model
-
-# Load the model
-model = load_model('smoothed_series.pkl')
-
-# Function to generate temperature data using the model
-def generate_temperature_data(model, start_date, end_date):
-    date_range = pd.date_range(start=start_date, end=end_date, freq='D')
-    # Assuming the model can generate temperature data for the date range
-    # Here we simulate it with random data, replace this with model predictions
+# Function to load the dataset
+@st.cache_data
+def load_data():
+    date_range = pd.date_range(start='2014-01-01', end='2017-12-31', freq='D')
     temperature_data = pd.DataFrame({
         'date': date_range,
-        'temperature': np.random.uniform(low=10, high=18, size=len(date_range))  # Replace with model predictions
+        'temperature': np.random.uniform(low=10, high=18, size=len(date_range))  # Example temperature data
     })
     return temperature_data
 
 st.title("Daily Temperatures with Artificial Warming")
 
-# Generate data
-data = generate_temperature_data(model, '2014-01-01', '2017-12-31')
+# Load data
+data = load_data()
 
 # Adding navigation and other sections
 st.sidebar.title("Navigation")
@@ -45,3 +34,4 @@ elif navigation == "Explore":
     st.pyplot(fig)
 elif navigation == "About":
     st.write("About this app.")
+
