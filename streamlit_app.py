@@ -27,17 +27,10 @@ if navigation == "Home":
 elif navigation == "Explore":
     st.subheader("Graph showing daily temperatures can be viewed below")
 
-    # Displaying the graph
-    st.pyplot(create_graph(data))
-elif navigation == "About":
-    st.write("About this app.")
-
-# Function to create the graph
-def create_graph(data):
+    # Setting up the plot with a warm background color
     plt.style.use('seaborn-darkgrid')
-    fig, ax = plt.subplots(figsize=(12, 6))
-    gradient_colors = ['#FFDAB9', '#FFE4B5']  # Warm to cold gradient colors
-    fig.patch.set_facecolor(gradient_colors[0])  # Set warm color as background
+    fig, ax = plt.subplots(figsize=(12, 6), facecolor='#FFDAB9')  # Warm background color
+    ax.set_facecolor('#FFE4B5')  # Light warm color for plot background
     ax.plot(data['date'], data['temperature'], color='skyblue')
     ax.set_xlabel('Year')
     ax.set_ylabel('Temperature')
@@ -45,16 +38,6 @@ def create_graph(data):
     ax.xaxis.set_major_locator(plt.MaxNLocator(integer=True))
     ax.set_xticks(pd.date_range(start='2014-01-01', end='2017-12-31', freq='YS').to_pydatetime())
     ax.set_xticklabels([str(year) for year in range(2014, 2018)])
-    return fig
-
-# Applying warm-cold gradient background to the whole app
-page_bg = '''
-<style>
-[data-testid="stApp"] {
-    background: linear-gradient(to right, #FFDAB9, #FFE4B5);
-    color: black;
-}
-</style>
-'''
-
-st.markdown(page_bg, unsafe_allow_html=True)
+    st.pyplot(fig)
+elif navigation == "About":
+    st.write("About this app.")
