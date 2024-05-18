@@ -23,9 +23,7 @@ st.sidebar.title("Navigation")
 navigation = st.sidebar.radio("Go to", ["Home", "Explore", "About"])
 
 if navigation == "Home":
-    st.write("Welcome to our page! Here, we delve into the fascinating world of Detroit's Daily Temperatures with Artificial Warming. Our focus lies in predicting and forecasting the temperature trends over the upcoming two months. Moreover, we keenly observe how global warming impacts these trends, offering insights into the evolving climate scenario.
-    
-             Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.")
+    st.write("Welcome to our page! Here, we delve into the fascinating world of Detroit's Daily Temperatures with Artificial Warming. Our focus lies in predicting and forecasting the temperature trends over the upcoming two months. Moreover, we keenly observe how global warming impacts these trends, offering insights into the evolving climate scenario.Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.")
 elif navigation == "Explore":
     st.subheader("Graph showing daily temperatures can be viewed below")
     fig, ax = plt.subplots()
