@@ -26,7 +26,7 @@ if navigation == "Home":
     """, unsafe_allow_html=True)
 elif navigation == "Explore":
     st.subheader("Daily Temperatures with Artificial Warming")
-    st.image("gets.jfif", caption="This graph presents the predictions and forecasts of daily temperatures in Detroit from 2012 to 2017 and beyond.", use_column_width=True)
+    st.image("Graph.jfif", caption="This graph presents the predictions and forecasts of daily temperatures in Detroit from 2012 to 2017 and beyond.", use_column_width=True)
 elif navigation == "About":
     st.markdown("""
     <div style='text-align: justify;'>
