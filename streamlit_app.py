@@ -46,3 +46,15 @@ def create_graph(data):
     ax.set_xticks(pd.date_range(start='2014-01-01', end='2017-12-31', freq='YS').to_pydatetime())
     ax.set_xticklabels([str(year) for year in range(2014, 2018)])
     return fig
+
+# Applying warm-cold gradient background to the whole app
+page_bg = '''
+<style>
+[data-testid="stApp"] {
+    background: linear-gradient(to right, #FFDAB9, #FFE4B5);
+    color: black;
+}
+</style>
+'''
+
+st.markdown(page_bg, unsafe_allow_html=True)
