@@ -7,7 +7,7 @@ def load_model(filepath):
     model = tf.keras.models.load_model(filepath)
     return model
 
-st.title("Water Quality Prediction")
+st.title("TITLE")
 
-model = load_model('C:\Users\HP\Desktop\STREAMLIT\my_arima_model.h5')
+model = load_model(r'C:\Users\HP\Desktop\STREAMLIT\my_arima_model.h5')
 
