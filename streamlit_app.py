@@ -12,7 +12,7 @@ def load_data():
     })
     return temperature_data
 
-st.title("Daily Temperatures with Artificial Warming")
+st.title("Temperatures with Artificial Warming")
 
 # Adding navigation and other sections
 st.sidebar.title("Navigation")
@@ -21,11 +21,11 @@ navigation = st.sidebar.radio("Go to", ["Home", "Explore", "About"])
 if navigation == "Home":
     st.markdown("""
     <div style='text-align: justify;'>
-    Welcome to our page! Here, we delve into the fascinating world of Detroit's Daily Temperatures with Artificial Warming. Our focus lies in predicting and forecasting the temperature trends over the upcoming two months. Moreover, we keenly observe how global warming impacts these trends, offering insights into the evolving climate scenario.     Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.
+    Welcome to our page! Here, we delve into the fascinating world of Detroit's Temperatures with Artificial Warming. Our focus lies in predicting and forecasting the temperature trends over the upcoming two months. Moreover, we keenly observe how global warming impacts these trends, offering insights into the evolving climate scenario.     Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.
     </div>
     """, unsafe_allow_html=True)
 elif navigation == "Explore":
-    st.subheader("Daily Temperatures with Artificial Warming")
+    st.subheader("Temperatures with Artificial Warming")
     st.image("Graph.jfif", caption="This graph presents the predictions and forecasts of daily temperatures in Detroit from 2012 to 2017 and beyond.", use_column_width=True)
 elif navigation == "About":
     st.markdown("""
