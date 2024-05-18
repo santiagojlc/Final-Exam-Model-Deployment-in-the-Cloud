@@ -24,10 +24,15 @@ navigation = st.sidebar.radio("Go to", ["Home", "Explore", "About"])
 
 if navigation == "Home":
     st.write("Welcome to our page! Here, we delve into the fascinating world of Detroit's Daily Temperatures with Artificial Warming. Our focus lies in predicting and forecasting the temperature trends over the upcoming two months. Moreover, we keenly observe how global warming impacts these trends, offering insights into the evolving climate scenario.")
-    st.write("Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.")
+    
 elif navigation == "Explore":
     st.subheader("Graph showing daily temperatures can be viewed below")
-    fig, ax = plt.subplots(figsize=(12, 6))  # Make the graph longer
+    st.write("Join us as we analyze, predict, and visualize the temperature trends, empowering you with valuable insights into the future climate of this vibrant city.")
+    # Setting up the plot with a warm-cold gradient background
+    plt.style.use('seaborn-darkgrid')
+    fig, ax = plt.subplots(figsize=(12, 6))
+    gradient_colors = ['#FFDAB9', '#FFE4B5']  # Warm to cold gradient colors
+    ax.set_facecolor(gradient_colors)  # Set gradient colors as background
     ax.plot(data['date'], data['temperature'], color='skyblue')
     ax.set_xlabel('Year')
     ax.set_ylabel('Temperature')
