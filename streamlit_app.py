@@ -9,4 +9,4 @@ def load_model(filepath):
 
 st.title("Daily Temperatures with Artificial Warming")
 
-model = load_model('my_arima_model.h5')
+model = load_model('mymodel.h5')
