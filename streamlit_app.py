@@ -26,11 +26,7 @@ if navigation == "Home":
     st.write("Welcome to the Home section.")
 elif navigation == "Explore":
     st.subheader("Graph showing daily temperatures can be viewed below")
-
-    # Setting up the plot with a warm background color
-    plt.style.use('seaborn-darkgrid')
-    fig, ax = plt.subplots(figsize=(12, 6), facecolor='#FFDAB9')  # Warm background color
-    ax.set_facecolor('#FFE4B5')  # Light warm color for plot background
+    fig, ax = plt.subplots(figsize=(12, 6))  # Make the graph longer
     ax.plot(data['date'], data['temperature'], color='skyblue')
     ax.set_xlabel('Year')
     ax.set_ylabel('Temperature')
