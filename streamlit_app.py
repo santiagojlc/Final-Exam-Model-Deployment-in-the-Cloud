@@ -7,7 +7,7 @@ from pathlib import Path
 import os
 
 # Dynamically determine the path to the ARIMA model file
-model_path = Path('ARIMA_model.pkl').parents[1]'
+model_path = Path('ARIMA_model.pkl').parents[1]
 
 # Load ARIMA model with error handling
 @st.cache_resource
