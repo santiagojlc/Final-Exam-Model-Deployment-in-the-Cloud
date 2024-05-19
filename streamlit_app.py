@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # Load ARIMA model
 @st.cache_resource
 def load_arima_model():
-    model = load_model('/content/gdrive/MyDrive/ARIMA_model.h5')
+    model = load_model('ARIMA_model.h5')
     return model
 
 # Function to load the dataset
