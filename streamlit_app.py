@@ -3,7 +3,11 @@ import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
+from pathlib import Path
 import os
+
+# Dynamically determine the path to the ARIMA model file
+model_path = Path('ARIMA_model.pkl').parents[1]'
 
 # Load ARIMA model with error handling
 @st.cache_resource
@@ -38,9 +42,6 @@ def predict_temperatures(model, data, steps=60):
     # Make predictions
     predictions = model.predict(last_data)
     return predictions.flatten()
-
-# Define model path
-model_path = '/content/gdrive/MyDrive/ARIMA_model.h5'
 
 # Load data and model
 data = load_data()
