@@ -7,13 +7,13 @@ from pathlib import Path
 import os
 
 # Dynamically determine the path to the ARIMA model file
-model_path = Path('ARIMA_model.pkl').parents[1]
+model_path = Path(__file__).resolve().parent.parent / 'pages' / 'ARIMA_model.h5'
 
 # Load ARIMA model with error handling
 @st.cache_resource
 def load_arima_model(model_path):
-    if os.path.exists(model_path):
-        model = load_model(model_path)
+    if model_path.exists():
+        model = load_model(str(model_path))
         return model
     else:
         st.error(f"Model file not found: {model_path}")
