@@ -25,6 +25,6 @@ if navigation == "Home":
     st.write("Welcome to the Home section.")
 elif navigation == "Explore":
     st.subheader("Graph showing daily temperatures can be viewed below")
-    st.image("gets.jfif", caption="Daily Temperatures with Artificial Warming", use_column_width=True)
+    st.image("Graph.jfif", caption="Daily Temperatures with Artificial Warming", use_column_width=True)
 elif navigation == "About":
     st.write("About this app.")
