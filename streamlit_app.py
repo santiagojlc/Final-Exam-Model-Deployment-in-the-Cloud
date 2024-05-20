@@ -6,9 +6,6 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 
-# Dynamically determine the path to the ARIMA model file
-model_path = 'arima_model.pkl'
-
 # Load ARIMA model with error handling
 @st.cache_resource
 def load_arima_model(model_path):
@@ -44,8 +41,7 @@ def predict_temperatures(model, data, steps=60):
     return predictions.flatten()
 
 # Load data and model
-data = load_data()
-arima_model = load_arima_model(model_path)
+data = load_data('arima_model.pkl')
 
 st.title("Temperatures with Artificial Warming")
 
