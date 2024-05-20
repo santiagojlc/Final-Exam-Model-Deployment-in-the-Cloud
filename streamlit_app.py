@@ -4,11 +4,11 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 from pathlib import Path
-import os
 
 # Load ARIMA model with error handling
 @st.cache_resource
 def load_arima_model(model_path):
+    model_path = Path(model_path)
     if model_path.exists():
         model = load_model(str(model_path))
         return model
@@ -41,7 +41,9 @@ def predict_temperatures(model, data, steps=60):
     return predictions.flatten()
 
 # Load data and model
-data = load_data('arima_model.pkl')
+data = load_data()
+model_path = 'arima_model.pkl'
+arima_model = load_arima_model(model_path)
 
 st.title("Temperatures with Artificial Warming")
 
@@ -70,22 +72,4 @@ elif navigation == "Explore":
             # Plot the data
             plt.figure(figsize=(10, 6))
             plt.plot(data['date'], data['temperature'], label='Historical Temperatures')
-            plt.plot(predictions_df['date'], predictions_df['predicted_temperature'], label='Predicted Temperatures', linestyle='--')
-            plt.xlabel('Date')
-            plt.ylabel('Temperature (°C)')
-            plt.title('Temperature Predictions')
-            plt.legend()
-            plt.grid(True)
-            
-            # Display the plot
-            st.pyplot(plt)
-        else:
-            st.warning("No predictions to display.")
-    else:
-        st.warning("Model could not be loaded. Please check the file path.")
-elif navigation == "About":
-    st.markdown("""
-    <div style='text-align: justify;'>
-    Through this platform, you'll embark on a journey through time and temperature, exploring the intricate interplay between artificial influences and natural climatic patterns. As we unravel the data, you'll gain a deeper understanding of the dynamic nature of Detroit's temperature landscape.
-    </div>
-    """, unsafe_allow_html=True)
+            plt.plot(predictions
